@@ -60,6 +60,7 @@ public class BPMNEditor implements ApplicationComponent {
     @Override
     public void initComponent() {
 
+        System.setProperty("asaf.app.name", "plugin");
         ASAF.setVersion("1.0.0 (Intellij Plugin)");
 
         String currentLanguage = ASAF.getSetting(ASAF.KEY_LANGUAGE, ASAF.DEFAULT_LANGUAGE);
@@ -69,11 +70,11 @@ public class BPMNEditor implements ApplicationComponent {
         ResourceMap.add("org.yaoqiang.bpmn.editor.resources.locale");
         ASAF.setLogo(ResourceMap.getImageIcon("yaoqiang.Menu.icon").getImage());
 
+        initialize();
+
         StaticActionMap.addActions(new GraphActions());
         StaticActionMap.addActions(new BPMNEditorActions());
         initBPMNModelMenu();
-
-        initialize();
 
         initListeners();
     }
