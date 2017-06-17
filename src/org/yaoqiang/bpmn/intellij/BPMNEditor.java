@@ -61,7 +61,7 @@ public class BPMNEditor implements ApplicationComponent {
     public void initComponent() {
 
         System.setProperty("asaf.app.name", "plugin");
-        ASAF.setVersion("1.0.2 (Intellij Plugin)");
+        ASAF.setVersion("1.0.3 (Intellij Plugin)");
 
         String currentLanguage = ASAF.getSetting(ASAF.KEY_LANGUAGE, ASAF.DEFAULT_LANGUAGE);
         ASAF.setLocale(new Locale(currentLanguage));
