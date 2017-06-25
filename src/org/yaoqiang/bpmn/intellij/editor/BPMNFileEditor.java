@@ -133,14 +133,18 @@ public class BPMNFileEditor implements FileEditor {
 
     public void saveChanges() {
         ApplicationManager.getApplication().invokeLater(() -> {
-            String content = XMLModelUtils.getXml(new BPMNCodec(editor.getGraph()).encode().getDocumentElement());
-            ApplicationManager.getApplication().runWriteAction(() -> CommandProcessor.getInstance().executeCommand(myProject, () -> myDocument.setText(convertString(content)), "BPMN Diagram edit operation", null));
+            if (myFile.isValid()) {
+                String content = XMLModelUtils.getXml(new BPMNCodec(editor.getGraph()).encode().getDocumentElement());
+                ApplicationManager.getApplication().runWriteAction(() -> CommandProcessor.getInstance().executeCommand(myProject, () -> myDocument.setText(convertString(content)), "BPMN Diagram edit operation", null));
+            }
         });
     }
 
     public void saveToFile() {
         ApplicationManager.getApplication().invokeLater(() -> {
-            ApplicationManager.getApplication().runWriteAction(() -> FileDocumentManager.getInstance().saveDocument(myDocument));
+            if (myFile.isValid()) {
+                ApplicationManager.getApplication().runWriteAction(() -> FileDocumentManager.getInstance().saveDocument(myDocument));
+            }
         });
     }
 
