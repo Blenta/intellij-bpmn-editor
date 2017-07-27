@@ -1,7 +1,7 @@
 <idea-plugin>
     <id>org.yaoqiang.bpmn.editor.plugin</id>
     <name>Yaoqiang BPMN Editor</name>
-    <version>1.0.4</version>
+    <version>1.0.5</version>
     <vendor email="shi_yaoqiang@yahoo.com" url="http://bpmn.sourceforge.net/">Yaoqiang</vendor>
 
     <description><![CDATA[
