@@ -61,7 +61,7 @@ public class BPMNEditor implements ApplicationComponent {
     public void initComponent() {
 
         System.setProperty("asaf.app.name", "plugin");
-        ASAF.setVersion("1.0.5 (Intellij Plugin)");
+        ASAF.setVersion("2.0.0 (Intellij Plugin)");
 
         String currentLanguage = ASAF.getSetting(ASAF.KEY_LANGUAGE, ASAF.DEFAULT_LANGUAGE);
         ASAF.setLocale(new Locale(currentLanguage));
@@ -201,7 +201,8 @@ public class BPMNEditor implements ApplicationComponent {
     }
 
     public void initBPMNModelMenu() {
-        DefaultActionGroup modelMenu = (DefaultActionGroup) ActionManager.getInstance().getAction("yaoqiang.actions.BPMNModelMenu");
+        ActionManager actionManager = ActionManager.getInstance();
+        DefaultActionGroup modelMenu = (DefaultActionGroup) actionManager.getAction("yaoqiang.actions.BPMNModelMenu");
         AppMenu model = new ModelMenu();
         for (int i = 0; i < model.getItemCount(); i++) {
             JMenuItem item = model.getItem(i);
