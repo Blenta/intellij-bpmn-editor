@@ -1,5 +1,6 @@
 package org.yaoqiang.bpmn.intellij.editor;
 
+import com.intellij.ide.highlighter.XmlFileType;
 import com.intellij.openapi.fileTypes.FileType;
 import com.intellij.openapi.fileTypes.FileTypeConsumer;
 import com.intellij.openapi.fileTypes.FileTypeFactory;
@@ -41,9 +42,9 @@ public class BPMNFileTypeFactory extends FileTypeFactory {
 
     @Override
     public void createFileTypes(@NotNull FileTypeConsumer consumer) {
-        final FileType fileType = consumer.getStandardFileTypeByName("XML");
-        assert fileType != null;
-        consumer.consume(fileType, BPMN_EXTENSION);
+//        final FileType fileType = consumer.getStandardFileTypeByName("XML");
+//        assert fileType != null;
+        consumer.consume(XmlFileType.INSTANCE, BPMN_EXTENSION);
     }
 
 }

@@ -1,7 +1,7 @@
 <idea-plugin>
     <id>org.yaoqiang.bpmn.editor.plugin</id>
     <name>Yaoqiang BPMN Editor</name>
-    <version>1.0.5</version>
+    <version>2.0.0</version>
     <vendor email="shi_yaoqiang@yahoo.com" url="http://bpmn.sourceforge.net/">Yaoqiang</vendor>
 
     <description><![CDATA[
@@ -13,7 +13,7 @@
     ]]></description>
 
     <!-- please see http://www.jetbrains.org/intellij/sdk/docs/basics/getting_started/build_number_ranges.html for description -->
-    <idea-version since-build="145.0"/>
+    <idea-version since-build="173.0"/>
 
     <!-- please see http://www.jetbrains.org/intellij/sdk/docs/basics/getting_started/plugin_compatibility.html
          on how to target different products -->
@@ -33,6 +33,7 @@
                                  instance="org.yaoqiang.bpmn.intellij.options.BPMNFileEditorDiagramConfigurable"/>
         <applicationConfigurable id="BPMNEditor.ElementStyles" parentId="preferences.BPMNEditor"
                                  instance="org.yaoqiang.bpmn.intellij.options.BPMNFileEditorElementStylesConfigurable"/>
+
     </extensions>
 
     <actions>
